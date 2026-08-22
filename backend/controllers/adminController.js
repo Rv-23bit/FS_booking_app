@@ -1,5 +1,7 @@
 
 const User = require('../models/User');
+const Class = require('../models/Class');
+const Booking = require('../models/Booking');
 
 // List all instructor accounts that are still waiting for approval.
 const getPendingInstructors = async (req, res) => {
@@ -52,4 +54,19 @@ const getApprovedInstructors = async (req, res) => {
     }
 };
 
-module.exports = { getPendingInstructors, approveInstructor, rejectInstructor, getApprovedInstructors };
+// Return a few simple counts for the admin dashboard.
+// Each count is worked out from the database at the moment it is asked for,
+// so the numbers are always real and up to date.
+const getSummary = async (req, res) => {
+    try {
+        const totalClasses = await Class.countDocuments();
+        const totalBookings = await Booking.countDocuments({ status: 'confirmed' });
+        const pendingInstructors = await User.countDocuments({ role: 'instructor', status: 'pending' });
+
+        res.json({ totalClasses, totalBookings, pendingInstructors });
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+module.exports = { getPendingInstructors, approveInstructor, rejectInstructor, getApprovedInstructors, getSummary };
