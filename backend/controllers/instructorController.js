@@ -52,9 +52,10 @@ const saveAttendance = async (req, res) => {
 
         const { attended = [], notAttended = [] } = req.body;
 
-        // The class filter makes sure we never touch bookings from another class.
-        await Booking.updateMany({ _id: { $in: attended }, class: cls._id }, { attended: true });
-        await Booking.updateMany({ _id: { $in: notAttended }, class: cls._id }, { attended: false });
+        // The class and status filters make sure we only ever touch confirmed
+        // bookings for this class, never another class or a cancelled booking.
+        await Booking.updateMany({ _id: { $in: attended }, class: cls._id, status: 'confirmed' }, { attended: true });
+        await Booking.updateMany({ _id: { $in: notAttended }, class: cls._id, status: 'confirmed' }, { attended: false });
 
         res.json({ message: 'Attendance saved' });
     } catch (error) {
