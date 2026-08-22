@@ -17,7 +17,12 @@ const Navbar = () => {
     if (!user) return null;
 
     if (user.role === 'member') {
-      return <Link to="/schedule" className="mr-4">Schedule</Link>;
+      return (
+        <>
+          <Link to="/schedule" className="mr-4">Schedule</Link>
+          <Link to="/bookings" className="mr-4">My Bookings</Link>
+        </>
+      );
     }
     if (user.role === 'instructor' && user.status === 'active') {
       return <Link to="/instructor/classes" className="mr-4">My Classes</Link>;

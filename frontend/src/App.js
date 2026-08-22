@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Pending from './pages/Pending';
 import Schedule from './pages/member/Schedule';
+import MyBookings from './pages/member/MyBookings';
 import InstructorClasses from './pages/instructor/InstructorClasses';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import InstructorRequests from './pages/admin/InstructorRequests';
@@ -29,6 +30,14 @@ function App() {
           element={
             <ProtectedRoute allowedRoles={['member']}>
               <Schedule />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/bookings"
+          element={
+            <ProtectedRoute allowedRoles={['member']}>
+              <MyBookings />
             </ProtectedRoute>
           }
         />
