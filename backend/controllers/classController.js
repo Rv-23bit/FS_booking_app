@@ -83,6 +83,11 @@ const updateClass = async (req, res) => {
             cls.instructor = instructor;
         }
 
+        // Do not let the capacity drop below how many people are already booked.
+        if (capacity !== undefined && Number(capacity) < cls.bookedCount) {
+            return res.status(400).json({ message: 'Capacity cannot be less than the number already booked' });
+        }
+
         // Update the other fields when they are provided.
         if (title !== undefined) cls.title = title;
         if (category !== undefined) cls.category = category;
