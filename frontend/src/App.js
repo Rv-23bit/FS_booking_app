@@ -8,6 +8,7 @@ import Pending from './pages/Pending';
 import Schedule from './pages/member/Schedule';
 import MyBookings from './pages/member/MyBookings';
 import InstructorClasses from './pages/instructor/InstructorClasses';
+import ClassRoster from './pages/instructor/ClassRoster';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import InstructorRequests from './pages/admin/InstructorRequests';
 import ManageClasses from './pages/admin/ManageClasses';
@@ -48,6 +49,14 @@ function App() {
           element={
             <ProtectedRoute allowedRoles={['instructor']}>
               <InstructorClasses />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/instructor/classes/:id/roster"
+          element={
+            <ProtectedRoute allowedRoles={['instructor']}>
+              <ClassRoster />
             </ProtectedRoute>
           }
         />
