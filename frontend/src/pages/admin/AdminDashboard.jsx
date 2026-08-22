@@ -11,10 +11,10 @@ const AdminDashboard = () => {
           <h2 className="font-semibold mb-1">Instructor requests</h2>
           <p className="text-sm text-gray-500">Approve or reject new instructors.</p>
         </Link>
-        <div className="block bg-white p-6 shadow rounded opacity-60">
+        <Link to="/admin/classes" className="block bg-white p-6 shadow rounded hover:shadow-md">
           <h2 className="font-semibold mb-1">Manage classes</h2>
-          <p className="text-sm text-gray-500">Coming soon.</p>
-        </div>
+          <p className="text-sm text-gray-500">Create, edit and remove classes.</p>
+        </Link>
       </div>
     </div>
   );
