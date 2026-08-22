@@ -26,6 +26,7 @@ const Navbar = () => {
       return (
         <>
           <Link to="/admin" className="mr-4">Dashboard</Link>
+          <Link to="/admin/classes" className="mr-4">Classes</Link>
           <Link to="/admin/requests" className="mr-4">Requests</Link>
         </>
       );

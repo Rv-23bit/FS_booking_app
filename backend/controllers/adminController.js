@@ -41,4 +41,15 @@ const rejectInstructor = async (req, res) => {
     }
 };
 
-module.exports = { getPendingInstructors, approveInstructor, rejectInstructor };
+// List all approved instructors, used to fill the instructor dropdown
+// when an admin creates or edits a class.
+const getApprovedInstructors = async (req, res) => {
+    try {
+        const instructors = await User.find({ role: 'instructor', status: 'active' }).select('name email');
+        res.json(instructors);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
+module.exports = { getPendingInstructors, approveInstructor, rejectInstructor, getApprovedInstructors };

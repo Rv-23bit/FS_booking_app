@@ -9,6 +9,8 @@ import Schedule from './pages/member/Schedule';
 import InstructorClasses from './pages/instructor/InstructorClasses';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import InstructorRequests from './pages/admin/InstructorRequests';
+import ManageClasses from './pages/admin/ManageClasses';
+import ClassForm from './pages/admin/ClassForm';
 
 function App() {
   return (
@@ -55,6 +57,30 @@ function App() {
           element={
             <ProtectedRoute allowedRoles={['admin']}>
               <InstructorRequests />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/classes"
+          element={
+            <ProtectedRoute allowedRoles={['admin']}>
+              <ManageClasses />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/classes/new"
+          element={
+            <ProtectedRoute allowedRoles={['admin']}>
+              <ClassForm />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin/classes/:id/edit"
+          element={
+            <ProtectedRoute allowedRoles={['admin']}>
+              <ClassForm />
             </ProtectedRoute>
           }
         />
