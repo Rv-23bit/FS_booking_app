@@ -6,4 +6,13 @@ const axiosInstance = axios.create({
   headers: { 'Content-Type': 'application/json' },
 });
 
+// Attach the saved login token to every request so protected routes work.
+axiosInstance.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
 export default axiosInstance;
