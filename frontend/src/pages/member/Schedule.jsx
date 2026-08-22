@@ -97,6 +97,7 @@ const Schedule = () => {
         <div className="grid gap-4 sm:grid-cols-2">
           {classes.map((cls) => {
             const isBooked = bookedIds.includes(cls._id);
+            const isPast = new Date(cls.classDateTime) < new Date();
             return (
               <div key={cls._id} className="bg-white p-5 shadow rounded">
                 <div className="flex justify-between items-start mb-2">
@@ -113,7 +114,9 @@ const Schedule = () => {
                   <span className="text-sm font-medium">
                     {cls.spacesLeft > 0 ? `${cls.spacesLeft} spaces left` : 'Class full'}
                   </span>
-                  {isBooked ? (
+                  {isPast ? (
+                    <span className="text-sm text-gray-400">Class finished</span>
+                  ) : isBooked ? (
                     <span className="text-sm text-green-600 font-medium">Booked</span>
                   ) : cls.spacesLeft > 0 ? (
                     <button
