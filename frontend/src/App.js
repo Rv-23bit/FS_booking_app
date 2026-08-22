@@ -13,11 +13,14 @@ import AdminDashboard from './pages/admin/AdminDashboard';
 import InstructorRequests from './pages/admin/InstructorRequests';
 import ManageClasses from './pages/admin/ManageClasses';
 import ClassForm from './pages/admin/ClassForm';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
     <Router>
       <Navbar />
+      {/* min height keeps the footer at the bottom on short pages */}
+      <main className="min-h-[80vh]">
       <Routes>
         {/* Public pages */}
         <Route path="/" element={<Home />} />
@@ -102,7 +105,14 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        {/* Any other address shows a friendly not found page */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
+      </main>
+      <footer className="text-center text-sm text-gray-400 py-6">
+        FS Studio — book your fitness classes
+      </footer>
     </Router>
   );
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import axiosInstance from '../../axiosConfig';
 
 // Show a date like "Mon 25 Aug, 6:00 pm".
@@ -16,8 +16,10 @@ const formatDateTime = (value) => {
 // Admin page to see every class and manage them.
 const ManageClasses = () => {
   const [classes, setClasses] = useState([]);
-  const [message, setMessage] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+  // Show a success message if we were sent here after creating or editing.
+  const [message, setMessage] = useState(location.state?.message || '');
 
   const loadClasses = async () => {
     try {

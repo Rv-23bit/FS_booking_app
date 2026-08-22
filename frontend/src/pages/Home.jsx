@@ -1,10 +1,23 @@
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
+import { pathForUser } from './Login';
 
-// Simple landing page. The role specific pages get added in the later phases.
+// Landing page for visitors who are not logged in.
+// If someone is already logged in, send them straight to their own area.
 const Home = () => {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return <p className="text-center mt-20 text-gray-500">Loading...</p>;
+  }
+
+  if (user) {
+    return <Navigate to={pathForUser(user)} replace />;
+  }
+
   return (
     <div className="max-w-2xl mx-auto mt-20 text-center px-4">
-      <h1 className="text-3xl font-bold mb-4">Welcome to FitBook</h1>
+      <h1 className="text-3xl font-bold mb-4">Welcome to FS Studio</h1>
       <p className="text-gray-600 mb-8">
         Book fitness classes at our studio. Sign up as a member to view the
         schedule and reserve your spot.

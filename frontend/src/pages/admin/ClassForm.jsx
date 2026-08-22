@@ -79,7 +79,8 @@ const ClassForm = () => {
       } else {
         await axiosInstance.post('/api/classes', form);
       }
-      navigate('/admin/classes');
+      // Send a success message back to the manage classes page.
+      navigate('/admin/classes', { state: { message: isEdit ? 'Class updated.' : 'Class created.' } });
     } catch (err) {
       setError(err.response?.data?.message || 'Could not save the class.');
     }
