@@ -32,6 +32,12 @@ const ManageClasses = () => {
 
   useEffect(() => {
     loadClasses();
+    // Clear the one time success message from history so refreshing the page
+    // does not show it again as if a class was just created.
+    if (location.state?.message) {
+      window.history.replaceState({}, '');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Delete a class after a quick confirmation.
