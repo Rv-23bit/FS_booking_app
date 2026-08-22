@@ -6,6 +6,7 @@ import dashboardImage from '../../assets/illustrations/dashboard.png';
 // Admin home. Shows a few real counts and links to the main admin pages.
 const AdminDashboard = () => {
   const [summary, setSummary] = useState({ totalClasses: 0, totalBookings: 0, pendingInstructors: 0 });
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const loadSummary = async () => {
@@ -13,7 +14,8 @@ const AdminDashboard = () => {
         const response = await axiosInstance.get('/api/admin/summary');
         setSummary(response.data);
       } catch (err) {
-        // Keep the zeros if it could not load.
+        // Do not show zeros as if they were real, say the counts failed to load.
+        setError('Could not load the latest counts. Please refresh to try again.');
       }
     };
     loadSummary();
@@ -26,6 +28,8 @@ const AdminDashboard = () => {
         <img src={dashboardImage} alt="" className="w-20 h-20" />
         <h1 className="text-2xl font-bold">Admin dashboard</h1>
       </div>
+
+      {error && <p className="text-red-600 text-sm mb-4">{error}</p>}
 
       {/* The three counts */}
       <div className="grid gap-4 sm:grid-cols-3 mb-8">
