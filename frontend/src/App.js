@@ -7,6 +7,7 @@ import Register from './pages/Register';
 import Pending from './pages/Pending';
 import Schedule from './pages/member/Schedule';
 import MyBookings from './pages/member/MyBookings';
+import ClassDetails from './pages/member/ClassDetails';
 import InstructorClasses from './pages/instructor/InstructorClasses';
 import ClassRoster from './pages/instructor/ClassRoster';
 import AdminDashboard from './pages/admin/AdminDashboard';
@@ -42,6 +43,14 @@ function App() {
           element={
             <ProtectedRoute allowedRoles={['member']}>
               <MyBookings />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/class/:id"
+          element={
+            <ProtectedRoute allowedRoles={['member']}>
+              <ClassDetails />
             </ProtectedRoute>
           }
         />
@@ -111,7 +120,7 @@ function App() {
       </Routes>
       </main>
       <footer className="text-center text-sm text-gray-400 py-6">
-        FS Studio — book your fitness classes
+        FS Club — book your fitness classes
       </footer>
     </Router>
   );

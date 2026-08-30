@@ -33,27 +33,27 @@ const AdminDashboard = () => {
 
       {/* The three counts */}
       <div className="grid gap-4 sm:grid-cols-3 mb-8">
-        <div className="bg-white p-6 shadow rounded text-center">
-          <p className="text-3xl font-bold text-blue-600">{summary.totalClasses}</p>
+        <div className="bg-white p-6 shadow-sm rounded-2xl text-center">
+          <p className="text-3xl font-bold text-brand">{summary.totalClasses}</p>
           <p className="text-sm text-gray-500 mt-1">Total classes</p>
         </div>
-        <div className="bg-white p-6 shadow rounded text-center">
-          <p className="text-3xl font-bold text-blue-600">{summary.totalBookings}</p>
+        <div className="bg-white p-6 shadow-sm rounded-2xl text-center">
+          <p className="text-3xl font-bold text-brand">{summary.totalBookings}</p>
           <p className="text-sm text-gray-500 mt-1">Confirmed bookings</p>
         </div>
-        <div className="bg-white p-6 shadow rounded text-center">
-          <p className="text-3xl font-bold text-blue-600">{summary.pendingInstructors}</p>
+        <div className="bg-white p-6 shadow-sm rounded-2xl text-center">
+          <p className="text-3xl font-bold text-brand">{summary.pendingInstructors}</p>
           <p className="text-sm text-gray-500 mt-1">Pending requests</p>
         </div>
       </div>
 
       {/* Links to the main admin pages */}
       <div className="grid gap-4 sm:grid-cols-2">
-        <Link to="/admin/classes" className="block bg-white p-6 shadow rounded hover:shadow-md">
+        <Link to="/admin/classes" className="block bg-white p-6 shadow-sm rounded-2xl hover:shadow-md">
           <h2 className="font-semibold mb-1">Manage classes</h2>
           <p className="text-sm text-gray-500">Create, edit and remove classes.</p>
         </Link>
-        <Link to="/admin/requests" className="block bg-white p-6 shadow rounded hover:shadow-md">
+        <Link to="/admin/requests" className="block bg-white p-6 shadow-sm rounded-2xl hover:shadow-md">
           <h2 className="font-semibold mb-1">Instructor requests</h2>
           <p className="text-sm text-gray-500">Approve or reject new instructors.</p>
         </Link>

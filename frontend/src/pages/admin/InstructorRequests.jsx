@@ -36,12 +36,12 @@ const InstructorRequests = () => {
     <div className="max-w-3xl mx-auto mt-10 px-4">
       <h1 className="text-2xl font-bold mb-4">Instructor requests</h1>
 
-      {message && <p className="text-blue-600 text-sm mb-4">{message}</p>}
+      {message && <p className="text-brand text-sm mb-4">{message}</p>}
 
       {requests.length === 0 ? (
         <p className="text-gray-600">There are no pending instructor requests right now.</p>
       ) : (
-        <div className="bg-white shadow rounded divide-y">
+        <div className="bg-white shadow-sm rounded-2xl divide-y">
           {requests.map((req) => (
             <div key={req._id} className="flex items-center justify-between p-4">
               <div>
@@ -51,7 +51,7 @@ const InstructorRequests = () => {
               <div className="flex gap-2">
                 <button
                   onClick={() => handleAction(req._id, 'approve')}
-                  className="bg-green-600 text-white px-3 py-1 rounded hover:bg-green-700"
+                  className="bg-brand text-white px-3 py-1 rounded hover:bg-brand-dark"
                 >
                   Approve
                 </button>

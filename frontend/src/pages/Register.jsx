@@ -41,14 +41,14 @@ const Register = () => {
           <button
             type="button"
             onClick={() => setRole('member')}
-            className={`flex-1 py-2 ${role === 'member' ? 'bg-blue-600 text-white' : 'bg-gray-100'}`}
+            className={`flex-1 py-2 ${role === 'member' ? 'bg-brand text-white' : 'bg-gray-100'}`}
           >
             Member
           </button>
           <button
             type="button"
             onClick={() => setRole('instructor')}
-            className={`flex-1 py-2 ${role === 'instructor' ? 'bg-blue-600 text-white' : 'bg-gray-100'}`}
+            className={`flex-1 py-2 ${role === 'instructor' ? 'bg-brand text-white' : 'bg-gray-100'}`}
           >
             Instructor
           </button>
@@ -79,7 +79,7 @@ const Register = () => {
             onChange={(e) => setFormData({ ...formData, password: e.target.value })}
             className="w-full mb-4 p-2 border rounded"
           />
-          <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
+          <button type="submit" className="w-full bg-brand text-white p-2 rounded hover:bg-brand-dark">
             Sign up
           </button>
         </form>

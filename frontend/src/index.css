@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Use the soft page background and main text colour everywhere. */
+body {
+  @apply bg-page text-ink font-sans;
+}
