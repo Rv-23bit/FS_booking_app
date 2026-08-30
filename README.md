@@ -78,39 +78,3 @@ npm run dev
 ```
 
 The frontend opens at `http://localhost:3000` and the backend runs at `http://localhost:5001`.
-
-## Sample logins
-
-If you ran the sample data script you can log in with these accounts. The password for all of the sample members and instructors is `password123`. The admin uses the email and password you set in your env file.
-
-* Admin: the email and password from your env file
-* Members: `alice@fitbook.com`, `bob@fitbook.com`, `cara@fitbook.com`, `dan@fitbook.com`
-* Instructors (approved): `sara@fitbook.com`, `mike@fitbook.com`, `liam@fitbook.com`
-* Instructor (waiting for approval): `nina@fitbook.com`
-
-The sample data also adds a mix of finished and upcoming classes and a few bookings, so every screen has something to show.
-
-## How the project is arranged
-
-```
-backend      the server code, the database models and the seed scripts
-frontend     the React app that runs in the browser
-illustrations   the picture files used in the app
-```
-
-## A short note on the design
-
-The backend is built with Node and Express and it stores data in MongoDB. The frontend is built with React and styled with Tailwind. When a member logs in the backend gives back a token, and the frontend keeps that token and sends it with every request so the backend knows who is asking. This is a common and simple way to handle logins.
-
-## Things this app does not do
-
-These are left out on purpose to keep the project small and clear.
-
-* The login token is kept in the browser local storage rather than a private cookie. This is easy to build but a cookie set by the server would be a little safer.
-* There is no forgot password flow.
-* The app is built for one studio and one time zone.
-* The search box on the schedule is shown but it does not filter yet.
-
-## Live link
-
-The live address will be added here after the app is deployed.
