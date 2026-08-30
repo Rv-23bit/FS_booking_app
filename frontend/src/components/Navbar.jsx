@@ -40,8 +40,8 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
-      <Link to="/" className="text-2xl font-bold">FS Studio</Link>
+    <nav className="bg-brand text-white p-4 shadow-sm flex justify-between items-center">
+      <Link to="/" className="font-logo text-3xl tracking-wide">FS Club</Link>
       <div className="flex items-center">
         {user ? (
           <>
@@ -60,7 +60,7 @@ const Navbar = () => {
             <Link to="/login" className="mr-4">Login</Link>
             <Link
               to="/register"
-              className="bg-green-500 px-4 py-2 rounded hover:bg-green-700"
+              className="bg-brand px-4 py-2 rounded hover:bg-brand-dark"
             >
               Register
             </Link>

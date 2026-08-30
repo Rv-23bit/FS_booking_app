@@ -46,7 +46,7 @@ const InstructorClasses = () => {
           <p className="text-gray-600">You have no classes assigned yet.</p>
         </div>
       ) : (
-        <div className="bg-white shadow rounded divide-y">
+        <div className="bg-white shadow-sm rounded-2xl divide-y">
           {classes.map((cls) => (
             <div key={cls._id} className="flex items-center justify-between p-4">
               <div>
@@ -59,7 +59,7 @@ const InstructorClasses = () => {
               </div>
               <Link
                 to={`/instructor/classes/${cls._id}/roster`}
-                className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700"
+                className="bg-brand text-white px-3 py-1 rounded hover:bg-brand-dark"
               >
                 View roster
               </Link>

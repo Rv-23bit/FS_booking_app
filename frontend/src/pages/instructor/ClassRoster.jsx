@@ -73,18 +73,18 @@ const ClassRoster = () => {
 
   return (
     <div className="max-w-2xl mx-auto mt-10 px-4">
-      <Link to="/instructor/classes" className="text-blue-600 text-sm">← Back to my classes</Link>
+      <Link to="/instructor/classes" className="text-brand text-sm">← Back to my classes</Link>
 
       <h1 className="text-2xl font-bold mt-2 mb-1">{classInfo ? classInfo.title : 'Class roster'}</h1>
       {classInfo && <p className="text-gray-500 mb-4">{formatDateTime(classInfo.classDateTime)}</p>}
 
-      {message && <p className="text-blue-600 text-sm mb-4">{message}</p>}
+      {message && <p className="text-brand text-sm mb-4">{message}</p>}
 
       {bookings.length === 0 ? (
         <p className="text-gray-600">No members have booked this class yet.</p>
       ) : (
         <>
-          <div className="bg-white shadow rounded divide-y mb-4">
+          <div className="bg-white shadow-sm rounded-2xl divide-y mb-4">
             {bookings.map((b) => (
               <label key={b._id} className="flex items-center justify-between p-4 cursor-pointer">
                 <div>
@@ -103,7 +103,7 @@ const ClassRoster = () => {
               </label>
             ))}
           </div>
-          <button onClick={handleSave} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          <button onClick={handleSave} className="bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark">
             Save attendance
           </button>
         </>

@@ -58,18 +58,18 @@ const ManageClasses = () => {
         <h1 className="text-2xl font-bold">Manage classes</h1>
         <button
           onClick={() => navigate('/admin/classes/new')}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          className="bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark"
         >
           Create class
         </button>
       </div>
 
-      {message && <p className="text-blue-600 text-sm mb-4">{message}</p>}
+      {message && <p className="text-brand text-sm mb-4">{message}</p>}
 
       {classes.length === 0 ? (
         <p className="text-gray-600">No classes yet. Create your first class to get started.</p>
       ) : (
-        <div className="bg-white shadow rounded divide-y">
+        <div className="bg-white shadow-sm rounded-2xl divide-y">
           {classes.map((cls) => (
             <div key={cls._id} className="flex items-center justify-between p-4">
               <div>

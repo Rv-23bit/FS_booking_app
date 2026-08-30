@@ -8,7 +8,7 @@ const NotFound = () => {
       <p className="text-gray-600 mb-6">
         The page you are looking for does not exist or may have moved.
       </p>
-      <Link to="/" className="bg-blue-600 text-white px-5 py-2 rounded">
+      <Link to="/" className="bg-brand text-white px-5 py-2 rounded">
         Go to home
       </Link>
     </div>

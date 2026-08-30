@@ -88,7 +88,7 @@ const ClassForm = () => {
 
   return (
     <div className="max-w-lg mx-auto mt-10 px-4">
-      <div className="bg-white p-6 shadow rounded">
+      <div className="bg-white p-6 shadow-sm rounded-2xl">
         <h1 className="text-2xl font-bold mb-4">{isEdit ? 'Edit class' : 'Create class'}</h1>
 
         {error && <p className="text-red-600 text-sm mb-3">{error}</p>}
@@ -158,7 +158,7 @@ const ClassForm = () => {
           </select>
 
           <div className="flex gap-2">
-            <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            <button type="submit" className="bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark">
               {isEdit ? 'Save changes' : 'Create class'}
             </button>
             <button

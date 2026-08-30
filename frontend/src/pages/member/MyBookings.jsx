@@ -55,7 +55,7 @@ const MyBookings = () => {
     <div className="max-w-3xl mx-auto mt-10 px-4">
       <h1 className="text-2xl font-bold mb-4">My bookings</h1>
 
-      {message && <p className="text-blue-600 text-sm mb-4">{message}</p>}
+      {message && <p className="text-brand text-sm mb-4">{message}</p>}
 
       {validBookings.length === 0 ? (
         <div className="text-center mt-10">
@@ -63,7 +63,7 @@ const MyBookings = () => {
           <p className="text-gray-600">You have not booked any classes yet.</p>
         </div>
       ) : (
-        <div className="bg-white shadow rounded divide-y">
+        <div className="bg-white shadow-sm rounded-2xl divide-y">
           {validBookings.map((b) => (
             <div key={b._id} className="flex items-center justify-between p-4">
               <div>

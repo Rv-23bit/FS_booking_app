@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axiosInstance from '../../axiosConfig';
 import noClassesImage from '../../assets/illustrations/no-classes.png';
 import successImage from '../../assets/illustrations/booking-success.png';
@@ -99,10 +100,12 @@ const Schedule = () => {
             const isBooked = bookedIds.includes(cls._id);
             const isPast = new Date(cls.classDateTime) < new Date();
             return (
-              <div key={cls._id} className="bg-white p-5 shadow rounded">
+              <div key={cls._id} className="bg-white p-5 shadow-sm rounded-2xl">
                 <div className="flex justify-between items-start mb-2">
-                  <h2 className="text-lg font-semibold">{cls.title}</h2>
-                  <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">{cls.category}</span>
+                  <Link to={`/class/${cls._id}`} className="text-lg font-semibold hover:underline">
+                    {cls.title}
+                  </Link>
+                  <span className="text-xs bg-brand-tint text-brand-dark px-2 py-1 rounded">{cls.category}</span>
                 </div>
                 {cls.description && <p className="text-sm text-gray-600 mb-2">{cls.description}</p>}
                 <p className="text-sm text-gray-700">{formatDateTime(cls.classDateTime)}</p>
@@ -121,7 +124,7 @@ const Schedule = () => {
                   ) : cls.spacesLeft > 0 ? (
                     <button
                       onClick={() => { setSuccess(''); setError(''); setSelected(cls); }}
-                      className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700"
+                      className="bg-brand text-white px-3 py-1 rounded hover:bg-brand-dark"
                     >
                       Book
                     </button>
@@ -149,7 +152,7 @@ const Schedule = () => {
               <button onClick={() => setSelected(null)} className="border px-4 py-2 rounded">
                 Cancel
               </button>
-              <button onClick={confirmBooking} className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+              <button onClick={confirmBooking} className="bg-brand text-white px-4 py-2 rounded hover:bg-brand-dark">
                 Confirm
               </button>
             </div>
