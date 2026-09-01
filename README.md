@@ -78,3 +78,17 @@ npm run dev
 ```
 
 The frontend opens at `http://localhost:3000` and the backend runs at `http://localhost:5001`.
+
+## Known limitations
+
+* Search and filtering on the class schedule is not implemented yet and remains a backlog item for a future iteration.
+* The app is deployed manually to a single EC2 instance, so there is no automated build or deployment pipeline and no automatic scaling if traffic grows.
+* The EC2 security group currently restricts inbound access on ports 3000 and 5001 to a single IP address rather than opening it to everyone, so the live link below only loads fully from that IP.
+
+## Live deployment
+
+The app is deployed on AWS EC2 and reachable at:
+
+http://54.206.187.126:3000/
+
+Because of the security group restriction above, this link may not load from every network.

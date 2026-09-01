@@ -80,7 +80,7 @@ const ClassDetails = () => {
     return (
       <div className="max-w-2xl mx-auto mt-10 px-4">
         <p className="text-muted">{error || 'Class not found.'}</p>
-        <Link to="/schedule" className="text-brand text-sm">Back to schedule</Link>
+        <Link to="/schedule" className="text-brand text-sm">⬅ Back to schedule</Link>
       </div>
     );
   }
@@ -89,7 +89,7 @@ const ClassDetails = () => {
 
   return (
     <div className="max-w-2xl mx-auto mt-8 px-4">
-      <Link to="/schedule" className="text-brand text-sm">Back to schedule</Link>
+      <Link to="/schedule" className="text-brand text-sm">⬅ Back to schedule</Link>
 
       {/* Hero banner with a picture that suits the category */}
       <div className="bg-brand-tint rounded-2xl mt-2 mb-4 flex items-center justify-center h-48">

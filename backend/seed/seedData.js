@@ -38,18 +38,18 @@ const seed = async () => {
         console.log('Connected to MongoDB');
 
         // Sample members. They all use the password below.
-        const alice = await upsertUser({ name: 'Alice Member', email: 'alice@fitbook.com', password: 'password123', role: 'member', status: 'active' });
-        const bob = await upsertUser({ name: 'Bob Member', email: 'bob@fitbook.com', password: 'password123', role: 'member', status: 'active' });
-        const cara = await upsertUser({ name: 'Cara Member', email: 'cara@fitbook.com', password: 'password123', role: 'member', status: 'active' });
-        const dan = await upsertUser({ name: 'Dan Member', email: 'dan@fitbook.com', password: 'password123', role: 'member', status: 'active' });
+        const alice = await upsertUser({ name: 'Alice Member', email: 'alice@fsclub.com', password: 'password123', role: 'member', status: 'active' });
+        const bob = await upsertUser({ name: 'Bob Member', email: 'bob@fsclub.com', password: 'password123', role: 'member', status: 'active' });
+        const cara = await upsertUser({ name: 'Cara Member', email: 'cara@fsclub.com', password: 'password123', role: 'member', status: 'active' });
+        const dan = await upsertUser({ name: 'Dan Member', email: 'dan@fsclub.com', password: 'password123', role: 'member', status: 'active' });
 
         // Sample instructors, already approved so they can be assigned to classes.
-        const sara = await upsertUser({ name: 'Sara Coach', email: 'sara@fitbook.com', password: 'password123', role: 'instructor', status: 'active' });
-        const mike = await upsertUser({ name: 'Mike Coach', email: 'mike@fitbook.com', password: 'password123', role: 'instructor', status: 'active' });
-        const liam = await upsertUser({ name: 'Liam Coach', email: 'liam@fitbook.com', password: 'password123', role: 'instructor', status: 'active' });
+        const sara = await upsertUser({ name: 'Sara Coach', email: 'sara@fsclub.com', password: 'password123', role: 'instructor', status: 'active' });
+        const mike = await upsertUser({ name: 'Mike Coach', email: 'mike@fsclub.com', password: 'password123', role: 'instructor', status: 'active' });
+        const liam = await upsertUser({ name: 'Liam Coach', email: 'liam@fsclub.com', password: 'password123', role: 'instructor', status: 'active' });
 
         // One instructor left pending so the admin has a request to review.
-        await upsertUser({ name: 'Nina Coach', email: 'nina@fitbook.com', password: 'password123', role: 'instructor', status: 'pending' });
+        await upsertUser({ name: 'Nina Coach', email: 'nina@fsclub.com', password: 'password123', role: 'instructor', status: 'pending' });
 
         // Reset the classes and bookings so the sample data is predictable.
         await Booking.deleteMany({});
