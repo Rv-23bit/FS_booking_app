@@ -120,7 +120,7 @@ function App() {
       </Routes>
       </main>
       <footer className="text-center text-sm text-gray-400 py-6">
-        FS Club — book your fitness classes
+        FS Club | Book your fitness classes!
       </footer>
     </Router>
   );
